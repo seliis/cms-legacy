@@ -41,7 +41,7 @@ const main = <main>
 </main>
 
 // Stylesheet
-import "./index.scss"
+import "./main.scss"
 
 // Initiate Rendering
 ReactDom.render(main, document.getElementById("react-root"))
