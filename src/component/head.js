@@ -9,7 +9,7 @@ class Head extends React.Component {
                         this.props.setPage("/")
                     }
                 }>
-                    labor musics
+                    coding musics
                 </h1>
                 <i onClick={
                     () => {

@@ -5,7 +5,13 @@ const makeList = function(a) {
     let r = []
     for (let i = 0; i < a.length; i++) {
         r.push(
-            <li key={"list-elem-" + i}>
+            <li key={"list-elem-" + i}
+                onClick={
+                    function() {
+                        window.location.href = "/play?" + a[i].addr
+                    }
+                }
+            >
                 <h1>{a[i].name}</h1>
             </li>
         )
@@ -16,7 +22,7 @@ const makeList = function(a) {
 // Component Object
 class List extends React.Component {
     constructor(p) {
-        super(p);
+        super(p)
         this.state = {
             m: false,
             f: null,

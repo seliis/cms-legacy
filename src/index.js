@@ -6,6 +6,7 @@ import Head from "./component/head"
 import Home from "./component/home"
 import Menu from "./component/menu"
 import List from "./component/list"
+import Play from "./component/play"
 
 // Route Related
 const arrMenu = [
@@ -21,6 +22,11 @@ const getPage = function() {
     }
     if (t === "menu") {
         return <Menu arr={arrMenu}/>
+    }
+    if (t === "play") {
+        return <Play addr={
+            window.location.search.slice(1)
+        }/>
     }
     if (arrMenu.indexOf(t) !== -1) {
         return <List type={t}/>
