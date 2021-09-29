@@ -1,4 +1,4 @@
-module lms
+module cms
 
 go 1.17
 

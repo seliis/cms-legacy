@@ -10,9 +10,7 @@ import Play from "./component/play"
 
 // Route Related
 const arrMenu = [
-    "lofi",
-    "swing",
-    "classic"
+    "city"
 ]
 
 const getPage = function() {

@@ -25,25 +25,25 @@ class List extends React.Component {
         super(p)
         this.state = {
             m: false,
-            f: null,
+            e: null,
             d: []
         }
     }
 
     componentDidMount() {
-        fetch("test.json").then(
+        fetch("md/" + this.props.type).then(
             r => r.json()
         ).then(
             (r) => {
                 this.setState({
                     m: true,
-                    d: r.data
+                    d: r
                 })
             },
             (e) => {
                 this.setState({
                     m: true,
-                    f
+                    e: e
                 })
                 console.log(e)
             }
@@ -51,10 +51,10 @@ class List extends React.Component {
     }
 
     render() {
-        const { m, f, d } = this.state
-        if (f) {
+        const { m, e, d } = this.state
+        if (e) {
             return <div>
-                f.message
+                {e.message}
             </div>
         } else if (!m) {
             return <div>
