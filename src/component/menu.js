@@ -2,32 +2,31 @@
 import React from "react"
 
 // Function
-const makeMenu = (arr) => {
-    let res = []
-    for (let i = 0; i < arr.length; i++) {
-        res.push(
-            <div class="menu-elem" id={"menu-elem-" + i}
+const makeMenu = function(a) {
+    let r = []
+    for (let i = 0; i < a.length; i++) {
+        r.push(
+            <div className="menu-elem" key={"menu-elem-" + i}
                 onClick={
-                    () => {
-                        window.location.href = "/" + arr[i]
+                    function() {
+                        window.location.href = "/" + a[i]
                     }
                 }
             >
-                {arr[i]}
+                {a[i]}
             </div>
         )
     }
-    return res
+    return r
 }
 
+// Component Object
 class Menu extends React.Component {
     render() {
         return (
-            <section>
-                <div id="menu">
-                    {makeMenu(this.props.menus)}
-                </div>
-            </section>
+            <div id="menu">
+                {makeMenu(this.props.arr)}
+            </div>
         )
     }
 }

@@ -2,46 +2,50 @@
 import ReactDom from "react-dom"
 
 // Component
-import Header from "./component/header"
+import Head from "./component/head"
 import Home from "./component/home"
 import Menu from "./component/menu"
-import Board from "./component/board"
+import List from "./component/list"
 
-// Route
-const Menus = [
-    "lofi", "swing", "classic"
+// Route Related
+const arrMenu = [
+    "lofi",
+    "swing",
+    "classic"
 ]
 
-const GetPage = () => {
-    let path = window.location.pathname.slice(1)
-    if (path === "") {
+const getPage = function() {
+    const t = window.location.pathname.slice(1)
+    if (t === "") {
         return <Home/>
     }
-    if (path === "menu") {
-        return <Menu menus={Menus}/>
+    if (t === "menu") {
+        return <Menu arr={arrMenu}/>
     }
-    if (Menus.indexOf(path) !== -1) {
-        return <Board genre={path}/>
+    if (arrMenu.indexOf(t) !== -1) {
+        return <List type={t}/>
     }
     return window.location.href = "/"
 }
 
 // Main Script
-const main = <main>
-    <Header setPage={
-        (target) => {
-            if (window.location.pathname === target) {
+const m = <main>
+    <Head setPage={
+        function(t) {
+            if (window.location.pathname === t) {
                 return null
             } else {
-                window.location.href = target
+                window.location.href = t
             }
         }
     }/>
-    { GetPage() }
+    <section>
+        {getPage()}
+    </section>
 </main>
 
 // Stylesheet
 import "./main.scss"
 
 // Initiate Rendering
-ReactDom.render(main, document.getElementById("react-root"))
+ReactDom.render(m, document.getElementById("react-root"))

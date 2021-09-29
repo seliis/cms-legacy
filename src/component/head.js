@@ -1,6 +1,6 @@
 import React from "react"
 
-class Header extends React.Component {
+class Head extends React.Component {
     render() {
         return (
             <header>
@@ -15,10 +15,10 @@ class Header extends React.Component {
                     () => {
                         this.props.setPage("/menu")
                     }
-                } class="fas fa-bars"/>
+                } className="fas fa-bars"/>
             </header>
         )
     }
 }
 
-export default Header
+export default Head

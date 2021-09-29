@@ -84,7 +84,7 @@ section {
 }
 
 #menu {
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
     margin: 0 auto;
@@ -93,7 +93,6 @@ section {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: $Background;
     .menu-elem {
         cursor: pointer;
         padding: 10px 0;
@@ -103,11 +102,8 @@ section {
         font-family: $Raleway;
         text-transform: uppercase;
         &:hover {
-            color: $Red;
+            color: #FD2F4A;
         }
-    }
-    @include m {
-        width: 100%;
     }
 }
 
